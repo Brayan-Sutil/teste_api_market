@@ -30,14 +30,14 @@ const deleteProduct = require("./controlers/deleteProduct/delete");
     '/values/add',
     addValues
   )
-  app.delete(
-    '/user/delete/:id',
-    deleteUser
-  )
-  app.delete(
-    '/delete/Product',
-    deleteProduct
-  )
+  // app.delete(
+  //   '/user/delete/:id',
+  //   deleteUser
+  // )
+  // app.delete(
+  //   '/delete/Product',
+  //   deleteProduct
+  // )
   app.get(
     '/products', 
     function(req, res){

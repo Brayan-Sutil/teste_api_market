@@ -1,7 +1,6 @@
 const User = require('../../models/User')
 
 function deleteUser (req,res){
-
   const UserDelete =  req.params.id
 
   User.destroy({where: {'id' : UserDelete}}).then(
