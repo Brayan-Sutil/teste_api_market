@@ -16,3 +16,7 @@ function alterValue (req,res){
 }
 
 module.exports = alterValue;
+
+
+//alterar para 
+  // update valuers set 'value' = 66.55 WHERE id = '1'

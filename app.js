@@ -13,7 +13,7 @@ const deleteProduct = require("./controlers/deleteProduct/delete");
     app.use(bodyParcer.json())
 
 //Rotas
- // envia para beck ende POST
+  // envia para beck ende POST
   app.post(
     '/user/add', 
     addUser
@@ -27,6 +27,10 @@ const deleteProduct = require("./controlers/deleteProduct/delete");
     addMarket
   )
   app.post(
+    '/values/add',
+    addValues
+  )
+  app.put(
     '/values/add',
     addValues
   )

@@ -13,4 +13,5 @@
 //=== Deletar item da tabela ===//
   DELETE FROM <Nome_da_tabela> WHERE id = <id_do_produto_a_ser_deletado>; 
 
-
+//=== Adicionar os produtos em suas ForeignKey ===//
+  update valuers set id_product = '15' WHERE id = '1'
