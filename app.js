@@ -6,6 +6,7 @@ const addProduct = require('./controlers/product/add');
 const addMarket = require("./controlers/marketplace/add");
 const addValues = require("./controlers/value/add");
 const deleteProduct = require("./controlers/deleteProduct/delete");
+const verificarEmail = require("./controlers/renderUser/render");
 
 // Config   
   //Body Parcer
@@ -42,6 +43,12 @@ const deleteProduct = require("./controlers/deleteProduct/delete");
   //   '/delete/Product',
   //   deleteProduct
   // )
+
+  app.post(
+    '/verify/user', 
+    verificarEmail
+  )
+
   app.get(
     '/products', 
     function(req, res){
@@ -69,6 +76,8 @@ const deleteProduct = require("./controlers/deleteProduct/delete");
       ]
       res.send({success: true, data: exemplo})
   })
+
+
 
   app.listen(8081, function(){
     console.log("O seu servidor esta rodando nessa rota ==> http://localhost:8081")

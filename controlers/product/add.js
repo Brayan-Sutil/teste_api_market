@@ -2,16 +2,16 @@ const Product = require('../../models/Product')
 
 function addProduct (req, res){
 
-  const nome = req.body.name
-  const marca = req.body.brand
-  const peso = req.body.weight
+  const name = req.body.name
+  const brand = req.body.brand
+  const weight = req.body.weight
   const imagens = null
 
   if( !!nome && !!marca && !!peso ){
     Product.create({
-      name: nome,
-      brand: marca,
-      weight: peso,
+      name: name,
+      brand: brand,
+      weight: weight,
       imagens: imagens,
     }).then(function(){
       res.send({success: true, nome, marca, peso})

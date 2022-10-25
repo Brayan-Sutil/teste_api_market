@@ -15,3 +15,6 @@
 
 //=== Adicionar os produtos em suas ForeignKey ===//
   update valuers set id_product = '15' WHERE id = '1'
+
+
+

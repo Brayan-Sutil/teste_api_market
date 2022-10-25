@@ -6,11 +6,11 @@ function deleteProduct (req,res){
 
   Product.destroy({where: {'id' : ProductDelete}}).then(
     function(){
-      res.send('Ocorreu tudo certo ao deletar seu produto!!!')
+      res.send({sucess: true},'Produto deletado !!!')
     }
   ).catch(
     function(error){
-      res.send('Algo deu errado ao deletar seu produto: '+ error)
+      res.send({sucess: false},'Algo deu errado ao deletar seu produto: '+ error)
     }
   )
 }

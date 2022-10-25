@@ -1,16 +1,14 @@
 const market = require('../../models/Marketplace')
 
 function addMarket (req, res){
-
-  const nome = req.body.name
+  const name = req.body.name
   const imagens = null
-
   if( !!nome  ){
     market.create({
-      name: nome,
+      name: name,
       imagens: imagens
     }).then(function(){
-      res.send({success: true, nome, imagens})
+      res.send({success: true, name, imagens})
     }).catch(function(error){ 
       res.send({success: false,  erro: error})
     })
