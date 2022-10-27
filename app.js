@@ -7,6 +7,7 @@ const addMarket = require("./controlers/marketplace/add");
 const addValues = require("./controlers/value/add");
 const deleteProduct = require("./controlers/deleteProduct/delete");
 const verificarEmail = require("./controlers/renderUser/render");
+const verifyProduct = require("./controlers/verefyProduct/data");
 
 // Config   
   //Body Parcer
@@ -47,6 +48,11 @@ const verificarEmail = require("./controlers/renderUser/render");
   app.post(
     '/verify/user', 
     verificarEmail
+  )
+
+  app.post(
+    '/verify/product', 
+    verifyProduct
   )
 
   app.get(

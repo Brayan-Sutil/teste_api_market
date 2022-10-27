@@ -5,11 +5,11 @@ function deleteUser (req,res){
 
   User.destroy({where: {'id' : UserDelete}}).then(
     function(){
-      res.send({sucees: true}, 'Ocorreu tudo certo ao deletar seu usuario!!!')
+      res.send({success: true}, 'Ocorreu tudo certo ao deletar seu usuario!!!')
     }
   ).catch(
     function(error){
-      res.send({sucess: false}, 'Algo deu errado ao deletar seu usuario: ' + error)
+      res.send({success: false}, 'Algo deu errado ao deletar seu usuario: ' + error)
     }
   )
 }

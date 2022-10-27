@@ -7,7 +7,7 @@ const User = require("../../models/User");
     }
     User.findAll({order: [['id', 'DESC']], where: {'email' : email}}).then(
       function(response){
-        res.send({sucess: true, exists: response.length > 0 })
+        res.send({success: true, exists: response.length > 0})
       }
     )
   }

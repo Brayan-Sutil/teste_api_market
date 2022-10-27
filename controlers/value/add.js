@@ -14,7 +14,7 @@ function addValues (req, res){
     }).then(function(){
       res.send({success: true, values, idProduct, idMarketplace})
     }).catch(function(error){ 
-      res.send({success: false,  erro: error})
+      res.send({success: false,  error: error})
     })
   }else{
     res.send({success: false, error: "Preencha todos os dados dos Produtos!!"})

@@ -3,7 +3,7 @@ const market = require('../../models/Marketplace')
 function addMarket (req, res){
   const name = req.body.name
   const imagens = null
-  if( !!nome  ){
+  if( !!name  ){
     market.create({
       name: name,
       imagens: imagens

@@ -6,11 +6,11 @@ function alterValue (req,res){
 
   Value.update({where: {'id' : valueAlter}}).then(
     function(){
-      res.send({sucess: true},'Valor editado com sucesso!!!')
+      res.send({success: true},'Valor editado com sucesso!!!')
     }
   ).catch(
     function(error){
-      res.send({sucess: false},'Algo deu errado ao editar esse valor: '+ error)
+      res.send({success: false},'Algo deu errado ao editar esse valor: '+ error)
     }
   )
 }
