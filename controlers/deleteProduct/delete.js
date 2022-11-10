@@ -1,16 +1,13 @@
 const Product = require('../../models/Product')
 
 function deleteProduct (req,res){
-
-  const ProductDelete =  req.params.id
-
-  Product.destroy({where: {'id' : ProductDelete}}).then(
+  Product.destroy({where: {'id' : req.body.id}}).then(
     function(){
-      res.send({success: true},'Produto deletado !!!')
+      res.send('Ocorreu tudo certo!!!')
     }
   ).catch(
-    function(error){
-      res.send({success: false},'Algo deu errado ao deletar seu produto: '+ error)
+    function(erro){
+      res.send('Algo deu errado!: '+ erro)
     }
   )
 }

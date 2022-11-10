@@ -16,3 +16,4 @@ const Product = db.sequelize.define('products', {
 });
 
 module.exports = Product;
+

@@ -5,9 +5,11 @@ const addUser = require('./controlers/user/add')
 const addProduct = require('./controlers/product/add');
 const addMarket = require("./controlers/marketplace/add");
 const addValues = require("./controlers/value/add");
-const deleteProduct = require("./controlers/deleteProduct/delete");
-const verificarEmail = require("./controlers/renderUser/render");
+const verificarEmail = require("./controlers/verificarEmail/verificarEmail");
 const verifyProduct = require("./controlers/verefyProduct/data");
+const VerifyUserLogin = require("./controlers/VerifyUserLogin/data");
+const RenderProducts = require("./controlers/RenderProducts/data");
+const deleteProduct = require("./controlers/deleteProduct/delete");
 
 // Config   
   //Body Parcer
@@ -36,25 +38,26 @@ const verifyProduct = require("./controlers/verefyProduct/data");
     '/values/add',
     addValues
   )
-  // app.delete(
-  //   '/user/delete/:id',
-  //   deleteUser
-  // )
-  // app.delete(
-  //   '/delete/Product',
-  //   deleteProduct
-  // )
-
   app.post(
     '/verify/user', 
     verificarEmail
   )
-
   app.post(
     '/verify/product', 
     verifyProduct
   )
-
+  app.post(
+    '/verify/login',
+    VerifyUserLogin
+  )
+  app.get(
+    '/render/product',
+    RenderProducts
+  ),
+  app.get(
+    '/delete/product',
+    deleteProduct
+    )
   app.get(
     '/products', 
     function(req, res){
@@ -82,8 +85,6 @@ const verifyProduct = require("./controlers/verefyProduct/data");
       ]
       res.send({success: true, data: exemplo})
   })
-
-
 
   app.listen(8081, function(){
     console.log("O seu servidor esta rodando nessa rota ==> http://localhost:8081")
