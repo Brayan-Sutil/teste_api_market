@@ -6,10 +6,14 @@ const addProduct = require('./controlers/product/add');
 const addMarket = require("./controlers/marketplace/add");
 const addValues = require("./controlers/value/add");
 const verificarEmail = require("./controlers/verificarEmail/verificarEmail");
-const verifyProduct = require("./controlers/verefyProduct/data");
-const VerifyUserLogin = require("./controlers/VerifyUserLogin/data");
-const RenderProducts = require("./controlers/RenderProducts/data");
+const verifyProduct = require("./controlers/verefyProduct/verefy");
+const VerifyUserLogin = require("./controlers/VerifyUserLogin/verefy");
+const RenderProducts = require("./controlers/RenderProducts/render");
 const deleteProduct = require("./controlers/deleteProduct/delete");
+const alterValue = require("./controlers/alterValue/alter")
+
+
+
 
 // Config   
   //Body Parcer
@@ -34,10 +38,6 @@ const deleteProduct = require("./controlers/deleteProduct/delete");
     '/values/add',
     addValues
   )
-  app.put(
-    '/values/add',
-    addValues
-  )
   app.post(
     '/verify/user', 
     verificarEmail
@@ -58,33 +58,11 @@ const deleteProduct = require("./controlers/deleteProduct/delete");
     '/delete/product',
     deleteProduct
     )
-  app.get(
-    '/products', 
-    function(req, res){
-      const exemplo = [
-        {
-          id_mercado: 1,
-          id: 1,
-          nome: "leite",
-        },
-        {
-          id_mercado: 1,
-          id: 2, 
-          nome: "Açucar",
-        },
-        {
-          id_mercado: 1,
-          id: 3,
-          nome: "Maça",
-        },
-        {
-          id_mercado: 1,
-          id: 4,
-          nome: "Leite",
-        }
-      ]
-      res.send({success: true, data: exemplo})
-  })
+  app.patch(
+    '/alter/value',
+    alterValue
+  )
+   
 
   app.listen(8081, function(){
     console.log("O seu servidor esta rodando nessa rota ==> http://localhost:8081")

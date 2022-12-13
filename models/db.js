@@ -4,9 +4,6 @@ const Sequelize = require("sequelize");
   const sequelize = new Sequelize('app_marketplace', 'root', '1234567', {
     host: 'localhost',
     dialect: 'mysql',
-    query:{ 
-      raw:true
-    }
   });
 
   module.exports = {
