@@ -7,17 +7,17 @@ function addProduct (req, res){
   const weight = req.body.weight
   const imagens = null
 
-  if( !!name && !!brand && !!weight ){
+  if( !!name && !!weight ){
     Product.create({
       name: name,
       brand: brand,
       weight: weight,
       imagens: imagens,
-    }).then(function(){
-      res.send({success: true, name, brand, weight})
+    }).then(function(data){
+      res.send({success: true, data})
     }).catch(function(error){ 
       res.send({success: false,  error: error})
-    })
+    })  
   }else{
     res.send({success: false, error: "Preencha todos os dados dos Produtos!!"})
   }

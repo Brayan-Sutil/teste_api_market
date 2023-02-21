@@ -10,10 +10,8 @@ const verifyProduct = require("./controlers/verefyProduct/verefy");
 const VerifyUserLogin = require("./controlers/VerifyUserLogin/verefy");
 const RenderProducts = require("./controlers/RenderProducts/render");
 const deleteProduct = require("./controlers/deleteProduct/delete");
-const alterValue = require("./controlers/alterValue/alter")
-
-
-
+const alterValue = require("./controlers/alterValue/alter");
+const RenderMarket = require("./controlers/RenderMarkets/render");
 
 // Config   
   //Body Parcer
@@ -62,8 +60,12 @@ const alterValue = require("./controlers/alterValue/alter")
     '/alter/value',
     alterValue
   )
-   
 
+  app.get(
+    '/render/markets',
+    RenderMarket
+  )
+  
   app.listen(8081, function(){
-    console.log("O seu servidor esta rodando nessa rota ==> http://localhost:8081")
-  })
+    console.log("O seu servidor está rodando em ==> http://localhost:8081")
+  });
